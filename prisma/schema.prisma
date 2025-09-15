@@ -23,7 +23,7 @@ model User {
 }
 
 model Credential {
-  id       String @unique
+  id       String @unique @default(uuid())
   title    String
   platform String
   apiKey   String
@@ -32,7 +32,7 @@ model Credential {
 }
 
 model Workflow {
-  id          String  @unique
+  id          String  @unique @default(uuid())
   title       String
   enable      Boolean
   nodes       Json
