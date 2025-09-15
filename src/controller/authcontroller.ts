@@ -56,6 +56,6 @@ export async function signincontroller(req: Request, res: Response) {
   const token = jwt.sign({ id: existinguser.id }, process.env.Secret || "");
   res.cookie("token", token);
   return res.json({
-    existinguser,
+    token,
   });
 }
